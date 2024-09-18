@@ -254,14 +254,19 @@
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        display: false // Desativa os rótulos dos dados (remove os números)
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
                     }
                 }
             }
-        });
-    
+        }); 
+        
         // Gráfico de aumento de vendas 1
         const graficoAumento1 = document.getElementById('grafico-aumento-1').getContext('2d');
         const chartAumento1 = new Chart(graficoAumento1, {
