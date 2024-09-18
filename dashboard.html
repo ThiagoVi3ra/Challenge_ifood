@@ -16,7 +16,8 @@
     
     <title>Dashboard</title>
 </head>
-<body></body>
+<body> 
+   <main>
     <div class="wrapper">
         <aside id="sidebar">
             <div class="d-flex">
@@ -26,48 +27,49 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item active">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-solid fa-chart-line"></i>
                         <span>Dashboard</span>
                     </a>
+                </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-regular fa-copy"></i>
                         <span>Relatórios</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-solid fa-money-bill"></i>
                         <span>Transações</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-regular fa-user"></i>
                         <span>Perfil</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-regular fa-bell"></i>
                         <span>Notificações</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span>Privacidade</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-solid fa-gear"></i>
                         <span>Configurações</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link">
+                    <a href="#" class="sidebar-link" style="text-decoration: none;">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <span>Logout</span>
                     </a>
@@ -337,9 +339,11 @@
                 id: 'textCenter2',
                 beforeDraw: (chart) => {
                     drawCenterText(chart, '96%'); // Chama a função para desenhar '96%' no centro
-                }
-            }]
-        });
-    </script>
-</body>
+                        }
+                     }]
+                 });
+            </script>
+        </main>
+    </body>
+</main>
 </html>
