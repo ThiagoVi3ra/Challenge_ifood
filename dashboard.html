@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/d8dca49ecf.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    
+    <title>Dashboard</title>
+</head>
+<body></body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button id="toggle-btn" type="button">
+                    <img src="imgs/ifoodlogo.png" alt="Ifood" width="100%">
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item active">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Relatórios</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-solid fa-money-bill"></i>
+                        <span>Transações</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Perfil</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>Notificações</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Privacidade</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="" class="sidebar-link">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="main p-3">
+            <div class="text-left">
+                <h1>
+                    Dashboard
+                </h1>
+            </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5 class="card-title">Produto: Hambúrguer</h5>
+                                        <img src="./imgs/pexels-valeriya-580612 (2).jpg" alt="Hambúrguer" width="100%" >
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">Desempenho dos seus produtos por região</h5>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p class="card-text">Região: Vila Leopoldina, São Paulo, SP</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p class="card-text">Mês: Junho, 2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-12">
+                                                <canvas id="grafico-desempenho" width="400" height="200"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Melhores dias para promoção</h5>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-light" id="prev-month"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <h6 class="card-text">Junho 2024</h6>
+                                        <button class="btn btn-light" id="next-month"><i class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>DOM</th>
+                                                <th>SEG</th>
+                                                <th>TER</th>
+                                                <th>QUA</th>
+                                                <th>QUI</th>
+                                                <th>SEX</th>
+                                                <th>SAB</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td class="bg-danger">3</td>
+                                                <td>4</td>
+                                                <td>5</td>
+                                                <td>6</td>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>9</td>
+                                                <td>10</td>
+                                                <td>11</td>
+                                                <td>12</td>
+                                                <td>13</td>
+                                                <td class="bg-danger">14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>16</td>
+                                                <td>17</td>
+                                                <td>18</td>
+                                                <td>19</td>
+                                                <td>20</td>
+                                                <td>21</td>
+                                            </tr>
+                                            <tr>
+                                                <td>22</td>
+                                                <td class="bg-danger">23</td>
+                                                <td>24</td>
+                                                <td class="bg-danger">25</td>
+                                                <td>26</td>
+                                                <td>27</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td>29</td>
+                                                <td>30</td>
+                                                <td>31</td>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Pontos de aumento de vendas</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <canvas id="grafico-aumento-1" width="150" height="150"></canvas>
+                                    <p class="card-text text-center">R$10.00 OFF</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <canvas id="grafico-aumento-2" width="150" height="150"></canvas>
+                                    <p class="card-text text-center">Entrega Grátis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>    
+
+    <script>
+        // Registrando o plugin corretamente
+        Chart.register(ChartDataLabels);
+    
+        // Função para desenhar o texto no centro do gráfico
+        function drawCenterText(chart, text) {
+            const ctx = chart.ctx;
+            const width = chart.width;
+            const height = chart.height;
+    
+            ctx.restore();
+            const fontSize = (height / 6).toFixed(2); // Ajusta o tamanho da fonte conforme a altura do gráfico
+            ctx.font = `${fontSize}px sans-serif`;
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = 'black'; // Cor do texto no centro
+    
+            // Calcula a posição do texto para centralizá-lo
+            const textX = Math.round((width - ctx.measureText(text).width) / 2);
+            const textY = height / 2;
+    
+            // Desenha o texto no centro do gráfico
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
+    
+        const graficoDesempenho = document.getElementById('grafico-desempenho').getContext('2d');
+        const chartDesempenho = new Chart(graficoDesempenho, {
+            type: 'line',
+            data: {
+                labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [100, 150, 200, 180, 250, 150, 400],
+                    borderColor: 'red',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        // Gráfico de aumento de vendas 1
+        const graficoAumento1 = document.getElementById('grafico-aumento-1').getContext('2d');
+        const chartAumento1 = new Chart(graficoAumento1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Aumento', 'Outros'],
+                datasets: [{
+                    data: [50, 50],
+                    backgroundColor: ['red', '#ddd'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    },
+                    datalabels: {
+                        display: false // Oculta todos os datalabels
+                    }
+                },
+                cutout: '70%', // Ajusta a largura da parte branca interna
+                layout: {
+                    padding: 0
+                }
+            },
+            plugins: [{
+                id: 'textCenter1',
+                beforeDraw: (chart) => {
+                    drawCenterText(chart, '50%'); // Chama a função para desenhar '50%' no centro
+                }
+            }]
+        });
+    
+        // Gráfico de aumento de vendas 2
+        const graficoAumento2 = document.getElementById('grafico-aumento-2').getContext('2d');
+        const chartAumento2 = new Chart(graficoAumento2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Aumento', 'Outros'],
+                datasets: [{
+                    data: [96, 4],
+                    backgroundColor: ['red', '#ddd'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    },
+                    datalabels: {
+                        display: false // Oculta todos os datalabels
+                    }
+                },
+                cutout: '70%', // Ajusta a largura da parte branca interna
+                layout: {
+                    padding: 0
+                }
+            },
+            plugins: [{
+                id: 'textCenter2',
+                beforeDraw: (chart) => {
+                    drawCenterText(chart, '96%'); // Chama a função para desenhar '96%' no centro
+                }
+            }]
+        });
+    </script>
+</body>
+</html>

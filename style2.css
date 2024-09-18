@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #FFE2E2;
+    padding-left: 90px;
+}
+
+#sidebar {
+    width: 70px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.35s ease-in-out;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: #888888;
+    font-size: 0.9rem;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar-link i {
+    font-size: 1.5rem;
+}
+
+a.sidebar-link span {
+    display: none; /* Esconde o texto por padrão */
+    margin-left: 1rem;
+}
+
+a.sidebar-link:hover span {
+    display: inline-block; /* Mostra o texto ao passar o mouse */
+}
+
+.sidebar-item.active .sidebar-link {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+#sidebar:hover {
+    width: 260px; /* Aumenta a largura da sidebar ao passar o mouse */
+}
+
+#sidebar:hover a.sidebar-link span {
+    display: inline-block; /* Mostra os textos ao passar o mouse */
+}
+
+/* Estilização dos cards */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    font-size: 1.1rem;
+}
+
+.card-text.font-weight-bold {
+    font-size: 1.5rem;
+    color: #FF0000;
+}
+
+.container {
+    max-width: 90%;
+}
+
+/* Estilização da tabela */
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Estilização dos badges de status */
+.badge {
+    font-size: 14px;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main {
+        padding-left: 0;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    #sidebar:hover {
+        width: 100%;
+    }
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #888888;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #FF0000;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:hover {
+    width: 300px; /* Define a largura da sidebar ao passar o mouse */
+}
+
+#sidebar:hover .sidebar-logo,
+#sidebar:hover a.sidebar-link span {
+    display: block;
+}
+
+/* style2.css */
+/* ... (restante do código CSS) ... */
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adiciona sombra */
+    padding: 20px; /* Adiciona padding */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+    color: #333333; /* Define cor do texto */
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem; /* Define tamanho da fonte do título */
+}
+
+.card-text {
+    font-size: 1.1rem; /* Define tamanho da fonte do texto */
+}
+
+.card-text.font-weight-bold {
+    font-size: 1.5rem; /* Define tamanho da fonte do valor */
+    color: #FF0000; /* Define cor do valor */
+}
+
+.container {
+    
+    max-width: 90%; /* Define a largura máxima do container */
+}
+
+}
+/* faz a barra da imagem logo do ifood sumir*/                   
+ #toggle-btn {
+    border: none; 
+    background: none; 
+    padding: 0; 
+    }
