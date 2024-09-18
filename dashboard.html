@@ -18,68 +18,70 @@
 </head>
 <body> 
    <main>
-    <div class="wrapper">
-        <aside id="sidebar">
-            <div class="d-flex">
-                <button id="toggle-btn" type="button">
-                    <img src="imgs/ifoodlogo.png" alt="Ifood" width="100%">
-                </button>
+    <header class="bg-white p-1 px-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="me-auto">
+                <img src="/imgs/ifoodlogo.png" alt="Logo Image" class="img-fluid" style="max-width: 60px;">
             </div>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item active">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Relatórios</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-solid fa-money-bill"></i>
-                        <span>Transações</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-regular fa-user"></i>
-                        <span>Perfil</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-regular fa-bell"></i>
-                        <span>Notificações</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Privacidade</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-solid fa-gear"></i>
-                        <span>Configurações</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" style="text-decoration: none;">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
-            </ul>
+
+            <div id="headbar" class="w-100 d-none d-lg-flex justify-content-start ms-5">
+                <h1 class="text-black fw-bold me-5 fs-4">Dashboard</h1>
+            </div> 
+
+            <div class="ms-4 d-none d-md-flex align-items-center">
+                <img class="me-3" style="width: 25px ; height: 23px;" src="/imgs/packard-bell.png">
+                <img class="fw-bold me-3" style="width: 35px ;" src="/imgs/do-utilizador.png">
+            </div>
+        </div>
+    </header>    
+
+    <main>
+        <div class="wrapper">
+            <aside id="sidebar">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item active">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-money-bill"></i>
+                            <span>Transações</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Privacidade</span>
+                        </a>
+                    </li>
+                    <hr class="mx-auto" style="width: 80%; opacity: 15%;">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
         </aside>
         <div class="main p-3">
             <div class="text-left">
                 <h1>
-                    Dashboard
+                    
                 </h1>
             </div>
             <div class="container mt-5">

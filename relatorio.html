@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/d8dca49ecf.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <title>Relatório</title>
+  </head>
+
+  <body>
+    <header class="bg-white p-1 px-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="me-auto">
+                <img src="/imgs/ifoodlogo.png" alt="Logo Image" class="img-fluid" style="max-width: 60px;">
+            </div>
+
+            <div id="headbar" class="w-100 d-none d-lg-flex justify-content-start ms-5">
+                <h1 class="text-black fw-bold me-5 fs-4">Relatórios</h1>
+            </div> 
+
+            <div class="ms-4 d-none d-md-flex align-items-center">
+                <img class="me-3" style="width: 25px ; height: 23px;" src="/imgs/packard-bell.png">
+                <img class="fw-bold me-3" style="width: 35px ;" src="/imgs/do-utilizador.png">
+            </div>
+        </div>
+    </header>    
+
+    <main>
+        <div class="wrapper">
+            <aside id="sidebar">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item active">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-money-bill"></i>
+                            <span>Transações</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Privacidade</span>
+                        </a>
+                    </li>
+                    <hr class="mx-auto" style="width: 80%; opacity: 15%;">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" style="text-decoration: none;">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+        </aside>
+      <div class="main p-3">
+        <div class="text-left">
+          <h1></h1>
+        </div>
+
+        <!-- Botões de filtro -->
+        <div class="filter-buttons mb-3">
+          <button class="btn btn-warning text-white" onclick="filterTable('Pendente')">Pendente</button>
+          <button class="btn btn-success" onclick="filterTable('Confirmado')">Confirmado</button>
+          <button class="btn btn-danger" onclick="filterTable('Cancelado')">Cancelado</button>
+          <button class="btn btn-secondary" onclick="filterTable('')">Mostrar Todos</button>
+        </div>
+
+        <div class="dropdown mb-3">
+          <!-- Botões de filtro => Esse botão deve servir para filtrar os dados da tabela de acordo com a data -->
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown">
+            Filtrar por período
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#" onclick="filterByDate('lastWeek')">Última semana</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filterByDate('last4Weeks')">Últimas 4 semanas</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filterByDate('last6Months')">Últimos 6 meses</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filterByDate('last12Months')">Último ano</a></li>
+          </ul>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Usuário</th>
+                  <th>Data e Horário</th>
+                  <th>Valor</th>
+                  <th>Forma de pagamento</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lilian</td>
+                  <td>17/06/2024, às 14:05</td>
+                  <td>R$ 21,95</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-warning">Pendente</span></td>
+                </tr>
+                <tr>
+                  <td>João</td>
+                  <td>17/06/2024, às 13:59</td>
+                  <td>R$ 25,86</td>
+                  <td>C. Débito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Carlos</td>
+                  <td>17/06/2024, às 13:34</td>
+                  <td>R$ 46,90</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Matheus</td>
+                  <td>17/06/2024, às 13:26</td>
+                  <td>R$ 17,56</td>
+                  <td>Espécie</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Carla</td>
+                  <td>17/06/2024, às 12:35</td>
+                  <td>R$ 5,80</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Anderson</td>
+                  <td>17/06/2024, às 12:02</td>
+                  <td>R$ 10,68</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Julia</td>
+                  <td>16/06/2024, às 22:00</td>
+                  <td>R$ 22,05</td>
+                  <td>C. Débito</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Eraldo</td>
+                  <td>16/06/2024, às 21:40</td>
+                  <td>R$ 15,20</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Wilson</td>
+                  <td>16/06/2024, às 21:02</td>
+                  <td>R$ 11,13</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Marcos</td>
+                  <td>16/06/2024, às 20:45</td>
+                  <td>R$ 50,02</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Claudio</td>
+                  <td>16/06/2024, às 20:22</td>
+                  <td>R$ 35,60</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <!-- Novas linhas com dados diversos de 2024 -->
+                <tr>
+                  <td>Laura_M</td>
+                  <td>15/01/2024, às 09:15</td>
+                  <td>R$ 18,50</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-warning">Pendente</span></td>
+                </tr>
+                <tr>
+                  <td>Marcos_N</td>
+                  <td>28/02/2024, às 11:45</td>
+                  <td>R$ 120,30</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Ana_O</td>
+                  <td>10/03/2024, às 14:23</td>
+                  <td>R$ 75,80</td>
+                  <td>Espécie</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Gabriel_P</td>
+                  <td>22/04/2024, às 08:30</td>
+                  <td>R$ 230,00</td>
+                  <td>C. Débito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Beatriz_Q</td>
+                  <td>05/05/2024, às 10:05</td>
+                  <td>R$ 55,75</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-warning">Pendente</span></td>
+                </tr>
+                <tr>
+                  <td>Lucas_R</td>
+                  <td>18/10/2023, às 12:12</td>
+                  <td>R$ 34,90</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Sofia_S</td>
+                  <td>23/10/2023, às 13:30</td>
+                  <td>R$ 45,00</td>
+                  <td>C. Débito</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Felipe_T</td>
+                  <td>18/09/2024, às 14:50</td>
+                  <td>R$ 70,80</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Isabela_U</td>
+                  <td>12/10/2024, às 16:00</td>
+                  <td>R$ 23,65</td>
+                  <td>Espécie</td>
+                  <td><span class="badge badge-warning">Pendente</span></td>
+                </tr>
+                <tr>
+                  <td>Renato_V</td>
+                  <td>28/11/2024, às 17:20</td>
+                  <td>R$ 95,99</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Daniel_W</td>
+                  <td>07/08/2024, às 18:35</td>
+                  <td>R$ 110,00</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Camila_X</td>
+                  <td>14/09/2024, às 19:45</td>
+                  <td>R$ 60,40</td>
+                  <td>PIX</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>João_Y</td>
+                  <td>20/09/2024, às 20:55</td>
+                  <td>R$ 89,30</td>
+                  <td>C. Débito</td>
+                  <td><span class="badge badge-success">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>Patrícia_Z</td>
+                  <td>27/08/2024, às 22:15</td>
+                  <td>R$ 47,75</td>
+                  <td>Espécie</td>
+                  <td><span class="badge badge-warning">Pendente</span></td>
+                </tr>
+                <tr>
+                  <td>Thiago_AA</td>
+                  <td>30/08/2024, às 23:59</td>
+                  <td>R$ 199,90</td>
+                  <td>C. Crédito</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Função para filtrar as transações por status
+        function filterTable(status) {
+          var rows = document.querySelectorAll("table tbody tr");
+
+          rows.forEach(function (row) {
+            var statusCell = row.querySelector("td:last-child span").textContent;
+            if (status === "" || statusCell === status) {
+              row.style.display = ""; // Mostra a linha
+            } else {
+              row.style.display = "none"; // Oculta a linha
+            }
+          });
+        }
+
+        // Função para filtrar as transações por data
+        function filterByDate(range) {
+          var rows = document.querySelectorAll("table tbody tr");
+          var now = new Date();
+          var startDate;
+
+          // Define o intervalo de tempo para os filtros
+          if (range === 'lastWeek') {
+            startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7);
+          } else if (range === 'last4Weeks') {
+            startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
+          } else if (range === 'last6Months') {
+            startDate = new Date(now.getFullYear(), now.getMonth() - 6, now.getDate());
+          } else if (range === 'last12Months') {
+            startDate = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+          }
+
+          rows.forEach(function (row) {
+            var dateCell = row.querySelector("td:nth-child(2)").textContent.split(",")[0];
+            var [day, month, year] = dateCell.split("/").map(Number);
+            var rowDate = new Date(year, month - 1, day);
+
+            // Mostra ou oculta a linha com base no intervalo de tempo
+            if (rowDate >= startDate && rowDate <= now) {
+              row.style.display = ""; // Mostra a linha
+            } else {
+              row.style.display = "none"; // Oculta a linha
+            }
+          });
+
+          // Atualiza o texto do botão dropdown
+          var button = document.getElementById("dropdownMenuButton");
+          var buttonText;
+          if (range === 'lastWeek') {
+            buttonText = "Última semana";
+          } else if (range === 'last4Weeks') {
+            buttonText = "Últimas 4 semanas";
+          } else if (range === 'last6Months') {
+            buttonText = "Últimos 6 meses";
+          } else {
+            buttonText = "Mostrar Todos";
+          }
+          button.textContent = buttonText;
+        }
+      </script>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-H9VR6d/1wkMOphtje0F9OZLCfZI9pJdcPa4mK7QuXq2/+SChvBfaesnxiPfJFezL"
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+  </body>
+
+</html>
