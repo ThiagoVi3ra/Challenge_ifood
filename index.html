@@ -16,8 +16,7 @@
     
     <title>Dashboard</title>
 </head>
-<body> 
-   <main>
+<body>
     <header class="bg-white p-1 px-2">
         <div class="d-flex align-items-center justify-content-between">
             <div class="me-auto">
@@ -33,8 +32,7 @@
                 <img class="fw-bold me-3" style="width: 35px ;" src="/imgs/do-utilizador.png">
             </div>
         </div>
-    </header>    
-
+    </header>
     <main>
         <div class="wrapper">
             <aside id="sidebar">
@@ -77,138 +75,139 @@
                         </a>
                     </li>
                 </ul>
-        </aside>
-        <div class="main p-3">
-            <div class="text-left">
-                <h1>
-                    
-                </h1>
-            </div>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-md-12">
+            </aside>
+            <div class="main p-3">
+                <div class="text-left">
+                    <h1>
+                        
+                    </h1>
+                </div>
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5 class="card-title">Produto: Hambúrguer</h5>
+                                            <img src="./imgs/pexels-valeriya-580612 (2).jpg" alt="Hambúrguer" width="100%" >
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h5 class="card-title">Desempenho dos seus produtos por região</h5>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <p class="card-text">Região: Vila Leopoldina, São Paulo, SP</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="card-text">Mês: Junho, 2024</p>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-12">
+                                                    <canvas id="grafico-desempenho" width="400" height="200"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
+                                <h5 class="card-title">Melhores dias para promoção</h5>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <h5 class="card-title">Produto: Hambúrguer</h5>
-                                        <img src="./imgs/pexels-valeriya-580612 (2).jpg" alt="Hambúrguer" width="100%" >
+                                    <div class="col-md-12">
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-light" id="prev-month"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <h6 class="card-text">Junho 2024</h6>
+                                            <button class="btn btn-light" id="next-month"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </div>
                                     </div>
-                                    <div class="col-md-8">
-                                        <h5 class="card-title">Desempenho dos seus produtos por região</h5>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <p class="card-text">Região: Vila Leopoldina, São Paulo, SP</p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p class="card-text">Mês: Junho, 2024</p>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-md-12">
-                                                <canvas id="grafico-desempenho" width="400" height="200"></canvas>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>DOM</th>
+                                                    <th>SEG</th>
+                                                    <th>TER</th>
+                                                    <th>QUA</th>
+                                                    <th>QUI</th>
+                                                    <th>SEX</th>
+                                                    <th>SAB</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td class="bg-danger">3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td>7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td>13</td>
+                                                    <td class="bg-danger">14</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>15</td>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td>21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>22</td>
+                                                    <td class="bg-danger">23</td>
+                                                    <td>24</td>
+                                                    <td class="bg-danger">25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td>28</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>29</td>
+                                                    <td>30</td>
+                                                    <td>31</td>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Melhores dias para promoção</h5>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="d-flex justify-content-between">
-                                        <button class="btn btn-light" id="prev-month"><i class="fa-solid fa-chevron-left"></i></button>
-                                        <h6 class="card-text">Junho 2024</h6>
-                                        <button class="btn btn-light" id="next-month"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Pontos de aumento de vendas</h5>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <canvas id="grafico-aumento-1" width="150" height="150"></canvas>
+                                        <p class="card-text text-center">R$10.00 OFF</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>DOM</th>
-                                                <th>SEG</th>
-                                                <th>TER</th>
-                                                <th>QUA</th>
-                                                <th>QUI</th>
-                                                <th>SEX</th>
-                                                <th>SAB</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td class="bg-danger">3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>6</td>
-                                                <td>7</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>9</td>
-                                                <td>10</td>
-                                                <td>11</td>
-                                                <td>12</td>
-                                                <td>13</td>
-                                                <td class="bg-danger">14</td>
-                                            </tr>
-                                            <tr>
-                                                <td>15</td>
-                                                <td>16</td>
-                                                <td>17</td>
-                                                <td>18</td>
-                                                <td>19</td>
-                                                <td>20</td>
-                                                <td>21</td>
-                                            </tr>
-                                            <tr>
-                                                <td>22</td>
-                                                <td class="bg-danger">23</td>
-                                                <td>24</td>
-                                                <td class="bg-danger">25</td>
-                                                <td>26</td>
-                                                <td>27</td>
-                                                <td>28</td>
-                                            </tr>
-                                            <tr>
-                                                <td>29</td>
-                                                <td>30</td>
-                                                <td>31</td>
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Pontos de aumento de vendas</h5>
-                            <div class="row mt-3">
-                                <div class="col-md-6">
-                                    <canvas id="grafico-aumento-1" width="150" height="150"></canvas>
-                                    <p class="card-text text-center">R$10.00 OFF</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <canvas id="grafico-aumento-2" width="150" height="150"></canvas>
-                                    <p class="card-text text-center">Entrega Grátis</p>
+                                    <div class="col-md-6">
+                                        <canvas id="grafico-aumento-2" width="150" height="150"></canvas>
+                                        <p class="card-text text-center">Entrega Grátis</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +215,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="mb-0">© Ifood. Todos os direitos reservados.</p>
+            <p class="mb-0">
+                <a href="#" class="text-white text-decoration-none">Política de Privacidade</a> | 
+                <a href="#" class="text-white text-decoration-none">Termos de Serviço</a>
+            </p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>    
 
@@ -344,8 +354,6 @@
                         }
                      }]
                  });
-            </script>
-        </main>
-    </body>
-</main>
+    </script>
+</body>
 </html>

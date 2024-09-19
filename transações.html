@@ -78,15 +78,18 @@
             </aside>
             <div class="main p-3">
                 <div class="dropdown mb-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                        16/06/2024 - 17/06/2024
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown">
+                        Mostrar todas as transações
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">Últimas 4 semanas</a></li>
-                        <li><a class="dropdown-item" href="#">Últimos 6 meses</a></li>
-                        <li><a class="dropdown-item" href="#">Por período</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filterByPeriod('4 semanas')">Últimas 4 semanas</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filterByPeriod('6 meses')">Últimos 6 meses</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filterByPeriod('1 ano')">Último ano</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filterByPeriod('Todas transações')">Todas as transações</a></li>
                     </ul>
                 </div>
+
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-3">
@@ -107,9 +110,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row mt-4">
                     <div class="col-md-12">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="transactionsTable">
                             <thead>
                                 <tr>
                                     <th>Usuário</th>
@@ -121,81 +125,187 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Username_A</td>
-                                    <td>17/06, às 14:05</td>
+                                    <td>Lilian</td>
+                                    <td>17/06/2024, às 14:05</td>
                                     <td>R$ 21,95</td>
                                     <td>PIX</td>
                                     <td><span class="badge badge-warning">Pendente</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_B</td>
-                                    <td>17/06, às 13:59</td>
+                                    <td>João</td>
+                                    <td>17/06/2024, às 13:59</td>
                                     <td>R$ 25,86</td>
                                     <td>C. Débito</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_C</td>
-                                    <td>17/06, às 13:34</td>
+                                    <td>Carlos</td>
+                                    <td>17/06/2024, às 13:34</td>
                                     <td>R$ 46,90</td>
                                     <td>C. Crédito</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_D</td>
-                                    <td>17/06, às 13:26</td>
+                                    <td>Matheus</td>
+                                    <td>17/06/2024, às 13:26</td>
                                     <td>R$ 17,56</td>
                                     <td>Espécie</td>
                                     <td><span class="badge badge-danger">Cancelado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_E</td>
-                                    <td>17/06, às 12:35</td>
+                                    <td>Carla</td>
+                                    <td>17/06/2024, às 12:35</td>
                                     <td>R$ 5,80</td>
                                     <td>PIX</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_F</td>
-                                    <td>17/06, às 12:02</td>
+                                    <td>Anderson</td>
+                                    <td>17/06/2024, às 12:02</td>
                                     <td>R$ 10,68</td>
                                     <td>PIX</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_G</td>
-                                    <td>16/06, às 22:00</td>
+                                    <td>Julia</td>
+                                    <td>16/06/2024, às 22:00</td>
                                     <td>R$ 22,05</td>
                                     <td>C. Débito</td>
                                     <td><span class="badge badge-danger">Cancelado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_H</td>
-                                    <td>16/06, às 21:40</td>
+                                    <td>Eraldo</td>
+                                    <td>16/06/2024, às 21:40</td>
                                     <td>R$ 15,20</td>
                                     <td>C. Crédito</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_I</td>
-                                    <td>16/06, às 21:02</td>
+                                    <td>Wilson</td>
+                                    <td>16/06/2024, às 21:02</td>
                                     <td>R$ 11,13</td>
                                     <td>C. Crédito</td>
                                     <td><span class="badge badge-danger">Cancelado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_J</td>
-                                    <td>16/06, às 20:45</td>
+                                    <td>Marcos</td>
+                                    <td>16/06/2024, às 20:45</td>
                                     <td>R$ 50,02</td>
                                     <td>PIX</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Username_K</td>
-                                    <td>16/06, às 20:22</td>
+                                    <td>Claudio</td>
+                                    <td>16/06/2024, às 20:22</td>
                                     <td>R$ 35,60</td>
                                     <td>PIX</td>
                                     <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <!-- Novas linhas com dados diversos de 2024 -->
+                                <tr>
+                                    <td>Laura_M</td>
+                                    <td>15/01/2024, às 09:15</td>
+                                    <td>R$ 18,50</td>
+                                    <td>PIX</td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Marcos_N</td>
+                                    <td>28/02/2024, às 11:45</td>
+                                    <td>R$ 120,30</td>
+                                    <td>C. Crédito</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ana_O</td>
+                                    <td>10/03/2024, às 14:23</td>
+                                    <td>R$ 75,80</td>
+                                    <td>Espécie</td>
+                                    <td><span class="badge badge-danger">Cancelado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Gabriel_P</td>
+                                    <td>22/04/2024, às 08:30</td>
+                                    <td>R$ 230,00</td>
+                                    <td>C. Débito</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Beatriz_Q</td>
+                                    <td>05/05/2024, às 10:05</td>
+                                    <td>R$ 55,75</td>
+                                    <td>PIX</td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lucas_R</td>
+                                    <td>18/07/2024, às 12:12</td>
+                                    <td>R$ 34,90</td>
+                                    <td>PIX</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Sofia_S</td>
+                                    <td>23/08/2024, às 13:30</td>
+                                    <td>R$ 45,00</td>
+                                    <td>C. Débito</td>
+                                    <td><span class="badge badge-danger">Cancelado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Felipe_T</td>
+                                    <td>02/09/2024, às 14:50</td>
+                                    <td>R$ 70,80</td>
+                                    <td>C. Crédito</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Isabela_U</td>
+                                    <td>12/10/2023, às 16:00</td>
+                                    <td>R$ 23,65</td>
+                                    <td>Espécie</td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Renato_V</td>
+                                    <td>28/11/2023, às 17:20</td>
+                                    <td>R$ 95,99</td>
+                                    <td>PIX</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Daniel_W</td>
+                                    <td>07/08/2024, às 18:35</td>
+                                    <td>R$ 110,00</td>
+                                    <td>C. Crédito</td>
+                                    <td><span class="badge badge-danger">Cancelado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Camila_X</td>
+                                    <td>14/09/2024, às 19:45</td>
+                                    <td>R$ 60,40</td>
+                                    <td>PIX</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>João_Y</td>
+                                    <td>20/09/2023, às 20:55</td>
+                                    <td>R$ 89,30</td>
+                                    <td>C. Débito</td>
+                                    <td><span class="badge badge-success">Confirmado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Patrícia_Z</td>
+                                    <td>27/08/2024, às 22:15</td>
+                                    <td>R$ 47,75</td>
+                                    <td>Espécie</td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Thiago_AA</td>
+                                    <td>30/08/2024, às 23:59</td>
+                                    <td>R$ 199,90</td>
+                                    <td>C. Crédito</td>
+                                    <td><span class="badge badge-danger">Cancelado</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -205,10 +315,84 @@
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-H9VR6d/1wkMOphtje0F9OZLCfZI9pJdcPa4mK7QuXq2/+SChvBfaesnxiPfJFezL" crossorigin="anonymous"></script>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="mb-0">© Ifood. Todos os direitos reservados.</p>
+            <p class="mb-0">
+                <a href="#" class="text-white text-decoration-none">Política de Privacidade</a> | 
+                <a href="#" class="text-white text-decoration-none">Termos de Serviço</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-H9VR6d/1wkMOphtje0F9OZLCfZI9pJdcPa4mK7QuXq2/+SChvBfaesnxiPfJFezL"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function filterByPeriod(period) {
+            const today = new Date();
+            let startDate, endDate;
+
+            switch (period) {
+                case '4 semanas':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 30);
+                    endDate = today;
+                    break;
+                case '6 meses':
+                    startDate = new Date(today);
+                    startDate.setMonth(today.getMonth() - 6);
+                    endDate = today;
+                    break;
+                case '1 ano':
+                    startDate = new Date(today.getFullYear(), 0, 1); // Início do ano atual
+                    endDate = today;
+                    break;
+                case 'Todas transações':
+                    startDate = new Date(0); // Data mínima
+                    endDate = today;
+                    break;
+                default:
+                    return;
+            }
+
+            applyDateFilter(startDate, endDate);
+            document.getElementById('dropdownMenuButton').textContent = period === 'Todas transações' ? 'Mostrar todas as transações' : `${formatDate(startDate)} - ${formatDate(endDate)}`;
+        }
+
+        function applyDateFilter(startDate, endDate) {
+            const rows = document.querySelectorAll('#transactionsTable tbody tr');
+
+            rows.forEach(row => {
+                const dateCell = row.cells[1].textContent.split(', às');
+                const dateParts = dateCell[0].split('/');
+                const timeParts = dateCell[1].trim().split(':');
+                const rowDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0], timeParts[0], timeParts[1]);
+
+                if (rowDate >= startDate && rowDate <= endDate) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function formatDate(date) {
+            return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
+        }
+
+        // Aplica o filtro "Todas transações" ao carregar a página
+        window.onload = function () {
+            filterByPeriod('Todas transações');
+        };
+    </script>
 </body>
+
 </html>
